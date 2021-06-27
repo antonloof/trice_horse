@@ -567,9 +567,6 @@ F 3 "" H 5650 3900 50  0001 C CNN
 	1    5650 3900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5650 3900 5650 3800
-Connection ~ 5650 3900
 $Comp
 L Device:R_Small R6
 U 1 1 609C3717
@@ -1091,4 +1088,21 @@ NoConn ~ 4550 6200
 NoConn ~ 4550 6300
 NoConn ~ 4550 6500
 NoConn ~ 4550 6600
+Text GLabel 5350 3800 0    50   Input ~ 0
+3v3
+$Comp
+L Device:R_Small R?
+U 1 1 60D8E49E
+P 5500 3800
+F 0 "R?" H 5559 3846 50  0000 L CNN
+F 1 "3k3" H 5559 3755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5500 3800 50  0001 C CNN
+F 3 "~" H 5500 3800 50  0001 C CNN
+	1    5500 3800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5400 3800 5350 3800
+Wire Wire Line
+	5600 3800 5650 3800
 $EndSCHEMATC

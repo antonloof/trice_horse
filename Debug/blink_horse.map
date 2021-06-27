@@ -1,0 +1,159 @@
+
+Map of Debug\blink_horse.sm8 from link file Debug\blink_horse.lkf - Sun Jun 27 20:31:47 2021
+
+
+                               --------
+                               Segments
+                               --------
+
+start 00008080 end 00008080 length     0 segment .const
+start 00008083 end 000082d6 length   595 segment .text
+start 00000000 end 00000000 length     0 segment .bsct
+start 00000000 end 00000020 length    32 segment .ubsct
+start 00000020 end 00000020 length     0 segment .bit
+start 00000020 end 00000020 length     0 segment .share
+start 00000100 end 00000100 length     0 segment .data
+start 00000100 end 00000100 length     0 segment .bss
+start 00000000 end 000001b0 length   432 segment .info.
+start 00000000 end 00000633 length  1587 segment .debug
+start 00008000 end 00008080 length   128 segment .const
+start 00008080 end 00008083 length     3 segment .init
+
+
+                               -------
+                               Modules
+                               -------
+
+C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8:
+start 00008083 end 000080d3 length    80 section .text
+start 00000100 end 00000100 length     0 section .bss
+start 00000000 end 00000000 length     0 section .ubsct
+start 00000000 end 00000034 length    52 section .info.
+
+Debug\main.o:
+start 000080d3 end 000082d5 length   514 section .text
+start 00000000 end 0000001a length    26 section .ubsct
+start 00000000 end 000004c8 length  1224 section .debug
+start 00000034 end 0000009e length   106 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)xreg.o:
+start 0000001a end 0000001d length     3 section .ubsct
+start 0000009e end 000000cd length    47 section .info.
+
+(C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)yreg.o:
+start 0000001d end 00000020 length     3 section .ubsct
+start 000000cd end 000000fc length    47 section .info.
+
+Debug\stm8_interrupt_vector.o:
+start 000082d5 end 000082d6 length     1 section .text
+start 000004c8 end 00000633 length   363 section .debug
+start 000000fc end 00000177 length   123 section .info.
+start 00008000 end 00008080 length   128 section .const
+
+
+                             -----------
+                             Stack usage
+                             -----------
+
+Debug\main.o:
+_clear                     16   (2)
+_delay                      7   (7)
+_diagonal_blink            18   (2)
+_group_spiral_4            18   (4)
+_main                  >   20   (2)
+_send_i2c                   8   (8)
+_set_leds                  14   (6)
+_set_vals                   6   (6)
+_spiral                    17   (3)
+
+Debug\stm8_interrupt_vector.o:
+f_NonHandledInterrupt  >    6   (6)
+
+Stack size: 26
+
+
+                              ---------
+                              Call tree
+                              ---------
+   1 > __stext: (0)
+
+   2 > _main: (2)
+   3      + _clear: (2)
+   4      |    + _set_leds: (6)
+   5      |    |    + _send_i2c: (8)
+          |    | 
+   6      |    + _set_vals: (6)
+          | 
+   7      + _diagonal_blink: (2)
+   8      |    + _clear --> 3
+   9      |    + _delay: (7)
+  10      |    + _set_leds --> 4
+  11      |    + _set_vals --> 6
+          | 
+  12      + _group_spiral_4: (4)
+  13      |    + _delay --> 9
+  14      |    + _set_leds --> 4
+  15      |    + _set_vals --> 6
+          | 
+  16      + _spiral: (3)
+  17      |    + _delay --> 9
+  18      |    + _set_leds --> 4
+          | 
+       
+  19 > f_NonHandledInterrupt: (6)
+
+  20   _clear --> 3
+
+  21   _delay --> 9
+
+  22   _diagonal_blink --> 7
+
+  23   _group_spiral_4 --> 12
+
+  24   _send_i2c --> 5
+
+  25   _set_leds --> 4
+
+  26   _set_vals --> 6
+
+  27   _spiral --> 16
+
+
+
+                               -------
+                               Symbols
+                               -------
+
+__endmem                000003fe   defined in command file
+                                   *** not used ***
+__endzp                 00000020   defined in command file section .ubsct
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+__idesc__               00008080   defined in linker section .init
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+__memory                00000100   defined in command file section .bss
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+__stack                 000005ff   defined in command file
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+__startmem              00000100   defined in command file section .bss
+                                   *** not used ***
+__stext                 00008083   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8 section .text
+                                   used in Debug\stm8_interrupt_vector.o
+__vectab                00008000   defined in Debug\stm8_interrupt_vector.o section .const
+_clear                  000080fa   defined in Debug\main.o section .text
+_delay                  000081e7   defined in Debug\main.o section .text
+_diagonal_blink         000081a2   defined in Debug\main.o section .text
+_exit                   000080d1   defined in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8 section .text
+_group_spiral_4         00008142   defined in Debug\main.o section .text
+_i2c_buf                00000010   defined in Debug\main.o section .ubsct
+_leds                   00000000   defined in Debug\main.o section .ubsct
+_main                   000080d3   defined in Debug\main.o section .text
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+_send_i2c               00008213   defined in Debug\main.o section .text
+_set_leds               0000825e   defined in Debug\main.o section .text
+_set_vals               000082bb   defined in Debug\main.o section .text
+_spiral                 0000810a   defined in Debug\main.o section .text
+c_x                     0000001a   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)xreg.o section .ubsct
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+c_y                     0000001d   defined in (C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\libm0.sm8)yreg.o section .ubsct
+                                   used in C:\Program Files (x86)\COSMIC\FSE_Compilers\CXSTM8\Lib\crtsi0.sm8
+f_NonHandledInterrupt   000082d5   defined in Debug\stm8_interrupt_vector.o section .text
